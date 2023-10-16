@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Heroku</title>
+
+    <meta
+      name="description"
+      content="A framework for easily creating beautiful presentations using HTML"
+    />
+    <meta name="author" content="Hakim El Hattab" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <a href="https://utam.dev/">
+            <img
+              src="./assets/logo.png"
+              alt="UI test logo"
+              style="
+                height: 160px;
+                margin: 0 auto 4rem auto;
+                background: transparent;
+              "
+              class="demo-l@go"
+            />
+          </a>
+          <h3>What is Heroku?</h3>
+          <p>
+            <small
+              >Created by
+              <a href="https://github.com/vovantais" target="_blank">
+                Vladimir Gedeiko
+                <img
+                  src="./assets/github-icon.png"
+                  style="
+                    height: 30px;
+                    margin: 0 auto 4rem auto;
+                    background: transparent;
+                  " /></a
+            ></small>
+          </p>
+        </section>
+
+        <section>
+          <h2>Today we will discuss about</h2>
+          <ul>
+            <li class="fragment">What is Heroku?</li>
+            <li class="fragment">What is the Heroku platform used for?</li>
+            <li class="fragment">How to use a platform?</li>
+            <li class="fragment">How Heroku work with Salesforce?</li>
+          </ul>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p
+              data-id="text-props"
+              style="
+                background: #555;
+                line-height: 1em;
+                letter-spacing: 0em;
+                margin-top: 130px;
+              "
+            >
+            What is Heroku?
+            </p>
+          </section>
+          <section data-auto-animate>
+            <p
+              data-id="text-props"
+              style="
+                background: #555;
+                line-height: 3em;
+                letter-spacing: 0.2em;
+                margin-top: 130px;
+              "
+            >
+            What is Heroku?
+            </p>
+          </section>
+          <img src="./assets/what-is-heroku.png" />
+        </section>
+
+        <section>
+          <h5>Heroku</h5>
+          <p class="fragment" style="font-size: 26px;">
+            Heroku — облачная платформа как услуга (PaaS - это означает, что платформа работает как сервис, предоставляет пользователю определенные функции и возможности, доступ к системам и ПО. При этом ее инфраструктура полностью скрыта), основанная на управляемой контейнерной системе, с интегрированными службами передачи данных и развитой экосистемой для развертывания и запуска приложений. (
+            <a href="https://blog.skillfactory.ru/glossary/kontejnerizacziya/" target="_blank">Контейнеризация</a>).
+          </p>
+          <p class="fragment" style="font-size: 26px;">
+            <img src="./assets/langs.png" width="1000px" height="220px"/>
+            Платформа предлагает поддержку широкого спектра языков программирования, таких как Node.js, Ruby, Python, Java, PHP, Go, Scala и Clojure. Heroku запускает приложения через виртуальные контейнеры, больше известные как Dynos.
+          </p>
+        </section>
+
+        <section data-background-gradient="linear-gradient(to bottom, #783b95, rgb(186, 186, 255))">
+          <h5>Heroku</h5>
+          <p class="fragment" style="font-size: 30px;">
+            Обычно приложения работают на выделенном сервере, а для сайтов используют хостинги.
+            Но возможности хостингов ограничены, а серверы, нужно настраивать, определять архитектуру, собирать приложение, заботиться о безопасности. Тратить на это ресурсы не всегда возможно.
+          </p>
+          <p class="fragment" style="font-size: 30px;">
+            В таких случаях используется Heroku. Платформа позволяет загружать любое приложение и не заниматься настройкой серверной части.
+          </p>
+        </section>
+        
+
+        <section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<h4>What is the Heroku platform used for?</h4>
+					<div class="r-hstack justify-center">
+						<div data-id="box1" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+						<div data-id="box2" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+						<div data-id="box3" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+            <div data-id="box4" style="background: #999; width: 50px; height: 50px; margin: 10px; border-radius: 5px;"></div>
+					</div>
+				</section>
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<div class="r-hstack justify-center">
+						<div data-id="box1" data-auto-animate-delay="0" style="background: cyan; width: 150px; height: 100px; margin: 20px"> <p style="font-size: 23px; position:relative; top: -150px;">1. Для размещения приложений и веб-сервисов</p> </div>
+						<div data-id="box2" data-auto-animate-delay="0.1" style="background: magenta; width: 150px; height: 100px; margin: 20px;"> <p style="font-size: 23px; position:relative; top: -150px;">2. Упрощения и ускорения цикла разработки</p></div>
+						<div data-id="box3" data-auto-animate-delay="0.2" style="background: yellow; width: 150px; height: 100px; margin: 20px;"><p style="font-size: 23px; position:relative; top: -150px;">3. Снижения потребности в работе сервером</p></div>
+            <div data-id="box4" data-auto-animate-delay="0.2" style="background: rgb(115, 232, 115); width: 150px; height: 100px; margin: 20px;"><p style="font-size: 23px; position:relative; top: -150px; word-wrap:break-word">4. Быстрого масштабирования проектов</p></div>
+					</div>
+					<h4 style="margin-top: 20px;">What is the Heroku platform used for?</h4>
+				</section>
+				<section data-auto-animate data-auto-animate-easing="cubic-bezier(0.770, 0.000, 0.175, 1.000)">
+					<div class="r-stack">
+						<div data-id="box1" style="background: cyan; width: 300px; height: 300px; border-radius: 200px;"></div>
+						<div data-id="box2" style="background: magenta; width: 200px; height: 200px; border-radius: 200px;"></div>
+						<div data-id="box3" style="background: yellow; width: 100px; height: 100px; border-radius: 200px;"></div>
+            <div data-id="box4" style="background: rgb(115, 232, 115); width: 50px; height: 50px; border-radius: 200px;"></div>
+					</div>
+					<h4 style="margin-top: 20px;">What is the Heroku platform used for?</h4>
+				</section>
+
+        <!-- Example of nested vertical slides -->
+
+        <section>
+          <section data-auto-animate>
+            <p
+            data-id="text-props"
+            style="
+              background: #555;
+              line-height: 1em;
+              letter-spacing: 0em;
+              margin-top: 130px;
+            "
+            >
+            How to use a platform Heroku?
+            </p>
+          </section>
+          <section data-auto-animate>
+            <p
+            data-id="text-props"
+            style="
+              background: #555;
+              line-height: 2em;
+              letter-spacing: 0.2em;
+              margin-top: 130px;
+            "
+            >
+            How to use a platform Heroku?
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <h6>
+            How to use a platform Heroku?
+          </h6>
+          <section data-auto-animate>
+            <ul style="font-size: 20px;">
+              <li>Открыть приложение в командной строке, написать команду heroku login -i, а затем ввести данные от своего аккаунта.
+              </li>
+              <li>Скачать официальную консольную утилиту <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">The Heroku Command Line Interface</a> (CLI, также известна как Herokuapp) на сайте сервиса. Для ее работы необходим установленный Git. 
+              <li>Зарегистрироваться на официальном сайте <a href="https://devcenter.heroku.com/" target="_blank">heroku</a>, add MFA и выбрать тариф(Add a payment method).</li>
+              <li>Перейти в папку, где хранится приложение, и ввести команду heroku create.</li>
+            </ul>
+          </section>
+          <section data-auto-animate>
+            <ul style="font-size: 20px;">
+              <li style="margin: 40px 0 0 0; padding: 0;">Зарегистрироваться на официальном сайте <a href="https://devcenter.heroku.com/" target="_blank">heroku</a>, add MFA и выбрать тариф(Add a payment method). <img src="./assets/create_acc.png" alt="create_acc" style="height: 180px;"></li>
+              <li>Скачать официальную консольную утилиту <a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">The Heroku Command Line Interface</a>  (CLI, также известна как Herokuapp) на сайте сервиса. Для ее работы необходим установленный Git. <p style="margin: 0; padding: 0;"><img src="./assets/cli.png" alt="cli" style="height: 90px;"></p></li>
+              <li >Открыть приложение в командной строке, написать команду heroku login -i, а затем ввести данные от своего аккаунта. 
+                  <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                    heroku login -i
+                        </code></pre>
+              </li>
+              <li>Перейти в папку, где хранится приложение, и ввести команду heroku create. <a href="https://devcenter.heroku.com/articles/git" target="_blank">Deploying with Git</a></li>
+              <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+                heroku create
+                    </code></pre>
+            </ul>
+          </section>
+        </section>
+
+		<section>
+			<section data-auto-animate>
+			  <p
+				data-id="text-props"
+				style="
+				  background: #555;
+				  line-height: 1em;
+				  letter-spacing: 0em;
+				  margin-top: 130px;
+				"
+			  >
+			  How Heroku work with Salesforce?
+			  </p>
+			</section>
+			<section data-auto-animate>
+			  <p
+				data-id="text-props"
+				style="
+				  background: #555;
+				  line-height: 2em;
+				  letter-spacing: 0.2em;
+				  margin-top: 130px;
+				"
+			  >
+			  How Heroku work with Salesforce?
+			  </p>
+			</section>
+		</section>
+
+    <section>
+      <section>
+        <h3>How Heroku work with Salesforce?</h3>
+        <p>You can integrate Heroku and the Salesforce Platform in several ways, and choosing among them comes down to understanding your requirements and the capabilities of each integration type.</p>
+      </section>
+      <section>
+        <h4>How Heroku work with Salesforce?</h4>
+        <img src="./assets/sf-heroku.png" style="height: 600px;" alt="sf-heroku" />
+      </section>
+    </section>
+
+    <section>
+      <h4><a href="https://devcenter.heroku.com/articles/heroku-connect" target="_blank">Heroku Connect</a></h4>
+      <p>Heroku Connect обеспечивает интеграцию данных. Он синхронизирует только объект и таблицы данных. Вы можете решить, какие объекты синхронизируются.</p>
+      <p><span style="color: rgb(6, 212, 37);">Use case:</span> Эта архитектура полезна во многих сценариях, когда вы хотите, чтобы приложение Heroku сохраняло или манипулировала данными Salesforce.</p>
+    </section>
+
+    <section>
+      <section>
+        <h4><a href="https://devcenter.heroku.com/articles/publish-and-subscribe-to-salesforce-platform-events" target="_blank">Publish and Subscribe to Salesforce Platform Events</a></h4>
+        <p><span style="color: rgb(6, 212, 37);">Use case:</span> Можно использовать когда нужна интеграция между SF и приложение на Heroku</p>
+        <p style="font-size: 24px;">Возможность publish and subscribe to Platform Events. Для этого может быть использованна библиотка <a href="https://github.com/jsforce/jsforce">jsforce for Node.js</a></p>
+      </section>
+      <section>
+        <p>Publishing Example:</p>
+        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+          // Establish an authenticated Salesforce connection. 
+          const conn = new jsforce.Connection({ … });
+  
+          const eventData = {
+            Flight_Id__c: id,
+            Confirmation_Number__c: confirmationNumber
+          };
+          
+          conn.sobject('Flight_Approved__e').create(eventData, (err, res) => {
+            if (err) {
+                console.error(err);
+            } else {
+                console.log("Event published");
+            }
+          });
+              </code></pre>
+      </section>
+      <section>
+        <p>Subscribing Example:</p>
+        <pre data-id="code-animation"><code class="hljs" data-trim data-line-numbers>
+          // Establish an authenticated Salesforce connection.
+          const conn = new jsforce.Connection({ … });
+          
+          const channel = "/event/Flight_Approved__e";
+          const replayId = -2; // -2 is all retained events
+          
+          const replayExt = new jsforce.StreamingExtension.Replay(channel, replayId);
+          
+          const fayeClient = conn.streaming.createClient([ replayExt ]);
+          
+          const subscription = fayeClient.subscribe(channel, data => {
+            console.log('Received Flight Approved Event', data);
+          });
+              </code></pre>
+      </section>
+    </section>
+	
+        <section>
+          <section>
+            <h5><a href="https://devcenter.heroku.com/articles/make-apex-and-workflow-callouts-to-your-api" target="_blank">Make Apex and Workflow Callouts to Your API</a></h5>
+            <div>
+              <p>There are two primary methods for calling into a Heroku app with an API, based on an activity in Salesforce:</p>
+              <ul>
+                <li>Apex HTTP callouts for programmatically making REST calls.</li>
+                <li>Workflow outbound messages for declaratively making SOAP calls.</li>
+              </ul>
+            </div>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span> Нужна интеграция REST API на основе обновлений объектов в организации Salesforce.</p>
+          </section>
+          <section>
+            <p>Apex example:</p>
+            <pre>
+              <code  class="java">
+// Trigger logic                
+trigger NewContactHerokuTrigger on Contact(after insert) {
+  String endpoint = 'https://example-app-1234567890ab.herokuapp.com/api/action';
+  String content = Helper.jsonContent(Trigger.new);
+  Helper.callout(endpoint, content);
+}
+
+// Apex Helper logic
+public class Helper {
+
+  public static String jsonContent(List<> contacts) {
+    // TODO logic JSON.serialize
+  }
+
+  @future(callout=true) 
+  public static void callout(String url, String content) {
+    // TODO logic callout
+  }
+}
+              </code>
+            </pre>
+          </section>
+        </section>
+        
+        <section>
+          <section>
+            <h4><a href="https://devcenter.heroku.com/articles/heroku-external-objects-salesforce" target="_blank">Heroku External Objects with Salesforce Connect</a></h4>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span> Интеграция данных из базы данных Heroku Postgres в Salesforce</p>
+            <div style="background: #999;">
+              <img src="./assets/Heroku-External-Objects-tutorial.png" alt="Heroku-External-Objects">
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h4><a href="https://devcenter.heroku.com/articles/integrating-heroku-and-mulesoft" target="_blank">Connecting Heroku Data Services to MuleSoft</a></h4>
+            <p>MuleSoft — это интеграционная платформа, для создания сложных интеграций и управления полным жизненным циклом API.</p>
+            <ul>
+             <li class="fragment">Готовые соединители для быстрой интеграции с сотнями систем включая Salesforce.</li>
+             <li class="fragment">Шаблоны интеграции и компоненты для быстрой автоматизации рабочих процессов</li>
+             <li class="fragment">Управление API полного жизненного цикла</li>
+             <li class="fragment">Инструменты интеграционной аналитики и управления</li>
+            </ul>
+          </section>
+          <section>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span> Есть интеграция Heroku Connect и Heroku Postgres для хранения данных о клиентах из Salesforce и управления ими, добавляем сюда MuleSoft можно получить доступ к этим данным и интегрировать их с другими службами, также подключенными к платформе MuleSoft.
+             </p>
+             <p>Используя Heroku и MuleSoft вместе, можно воспользоваться преимуществами гибкости управления данными Heroku, при этом используя любые внешние сервисы, необходимые вашему приложению.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h4><a href="https://help.salesforce.com/s/articleView?id=sf.bi_integrate_connectors_heroku_postgres_settings.htm&type=5" target="_blank">CRM Analytics(Heroku Postgres Connection)</a></h4>
+            <p>CRM Analytics — это платформа для анализа клиентов и бизнеса, которая работает с любым источником данных.</p>
+          </section>
+          <section>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span> Cинхронизации данных Heroku Postgres с CRM Analytics</p>
+            <p style="color: rgb(144, 219, 160);"><strong>Требования к подключению:</strong></p>
+            <ul>
+              <li class="fragment">Получить доступ к Heroku Postgres в частных пространствах Heroku;</li>
+              <li class="fragment">Создать соединение;</li>
+              <li class="fragment">Настройка соединения;</li>
+              <li class="fragment">Настройка фильтрации данных, синхронизированные с CRM Analytics;</li>
+            </ul>
+          </section>
+        </section>
+
+        
+        <section>
+          <section>
+            <h4><a href="https://devcenter.heroku.com/articles/mcconnect" target="_blank">Marketing Connector</a></h4>
+            <p>Softtrends Data Cloud & Marketing Connector — это надстройка, которая синхронизирует данные между вашим Data Cloud for Platform, Data Cloud for Marketing и другими маркетинговыми средами, такими как Salesforce Marketing Cloud, и хранилищами данных, такими как Postgres, AWS Redshift, Google BigQuery, Kafka и т. д.</p>
+          </section>
+          <section>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span></p>
+            <ul style="font-size: 36px;">
+              <li class="fragment">Синхронизируйте данные с Marketing Cloud;</li>
+              <li class="fragment">Синхронизируйте данные Postgres с Data Cloud (Tableau и другие);</li>
+              <li class="fragment">Синхронизируйте данные с хранилищем данных AWS Redshift, механизмом Google BigQuery и другими;</li>
+              <li class="fragment">Синхронизируйте данные с Postgres для создания отчетов и сервисов AI(Artificial intelligence)/ML(Machine learning);</li>
+              <li class="fragment">Передача данных в Kafka для выполнения прогнозного анализа и анализа в реальном времени;</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <div><img src="./assets/slack.png" alt="slack" width="250px" height="150px"></div>
+            <h4>
+              <a href="https://devcenter.heroku.com/articles/chatops" target="_blank">Slack</a>
+            </h4>
+            <p>Slack предостовляет множество функций и приложений , которые помогут вам управлять рабочим процессом.</p>
+          </section>
+          <section>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span> Heroku ChatOps (Slack Integration)</p>
+             <img src="" alt="" srcset="">
+             <img src="./assets/heroku-slack.png" alt="heroku-slack">
+             <img src="./assets/slack-heroku.png" alt="slack-heroku">
+          </section>
+        </section>
+
+        <section>
+          <section data-background="#dddddd">
+            <h2>Finally:</h2>
+            <a href="#" class="navigate-down">
+            </a>
+          </section>
+          <section
+            data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)"
+          >
+          <h4>
+            <a href="https://devcenter.heroku.com/articles/using-the-salesforce-rest-api-with-heroku" target="_blank" style="color: rgb(229, 20, 212);">Calling the Salesforce REST API</a>
+            <p><span style="color: rgb(6, 212, 37);">Use case:</span> Из Приложения Heroku можно по REST API Salesforce получать данные</p>
+          </h4>
+          </section>
+          <section>
+
+        <div style="display: flex;">
+          <p>Библиотеки такие как <a href="https://github.com/kevinohara80/nforce" target="_blank">nforce</a> или <a href="hhttps://github.com/jsforce/jsforce" target="_blank">JSForce</a> для Node.js, могут предоставить удобные оболочки для вызова API.</p>
+        </div> 
+          </section>
+          <section>
+            <h4>Example:</h4>
+            <img src="./assets/server.png" alt="server" height="600px">
+          </section>
+          <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+          </section>
+        </section>
+
+        <section>
+          <h2>Your question?</h2>
+        </section>
+        
+        <section>
+          <h5>Useful links</h5>
+          <ul>
+            <li><a href="https://blog.skillfactory.ru/glossary/heroku/" target="_blank">Heroku Blog</a></li>
+            <li><a href="https://blog.back4app.com/ru/что-такое-heroku/" target="_blank">What is heroku?</a></li>
+            <li><a href="https://devcenter.heroku.com/" target="_blank">Heroku Dev Documentation</a></li>
+            <li><a href="https://github.com/vovantais/Presentation-Heroku" target="_blank">Presentation Heroku</a></li>
+          </ul>
+        </section>
+
+        <section style="text-align: left;">
+          <h1>THE END</h1>
+          <h4>Thanks for attention</h4>
+        </section>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // Also available as an ES module, see:
+      // https://revealjs.com/initialization/
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        center: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [
+          RevealZoom,
+          RevealNotes,
+          RevealSearch,
+          RevealMarkdown,
+          RevealHighlight,
+        ],
+      });
+    </script>
+  </body>
+</html>
